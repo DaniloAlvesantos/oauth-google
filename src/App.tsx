@@ -1,10 +1,11 @@
 import { useAuth } from "./hooks/useAuth";
 import { styled } from "styled-components";
 import { Header } from "./components/header";
+import { Card } from "./components/card";
 
 const Container = styled.div`
   display: flex;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
 
@@ -12,12 +13,6 @@ const Container = styled.div`
 
   gap: 1rem;
   padding: 1rem;
-
-  h1 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
 `;
 
 function App() {
@@ -27,11 +22,16 @@ function App() {
     <>
       <Header />
       <Container>
-        <h1>
-          {!isGuest
-            ? `Welcome ${user.given_name}`
-            : "Log in with Google"}
-        </h1>
+        <Card
+          title={!isGuest ? "Welcome" : "Log in with Google"}
+          about={
+            !isGuest
+              ? `Welcome back ${user.given_name}`
+              : "Log in with google to continue seeing our content!"
+          }
+          $warn
+        />
+        
       </Container>
     </>
   );
