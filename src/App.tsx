@@ -29,7 +29,7 @@ function App() {
               ? `Welcome back ${user.given_name}`
               : "Log in with google to continue seeing our content!"
           }
-          $warn
+          
         />
         
       </Container>

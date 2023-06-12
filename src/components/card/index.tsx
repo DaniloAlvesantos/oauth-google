@@ -9,10 +9,10 @@ export interface CardsProps {
 }
 
 export function Card(props: CardsProps) {
-  const { title, about } = props;
+  const { title, about, warn } = props;
 
   return (
-    <CardComponent>
+    <CardComponent warn={warn}>
       <header>
         <h1>{title}</h1>
       </header>

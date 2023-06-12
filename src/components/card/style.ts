@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardComponent = styled.span<{ $warn?: boolean }>`
+export const CardComponent = styled.span<any>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@ export const CardComponent = styled.span<{ $warn?: boolean }>`
 
   padding: 0rem 1rem;
 
-  background:${props => props.$warn ? "#FDFCD3" : "#f1f1f1"};
+  background: ${(props) => props.warn ? "#F0EB8D" : "#f1f1f1"};
   color: #1f1f1f;
 
   border-radius: 5px;
@@ -24,8 +24,8 @@ export const CardComponent = styled.span<{ $warn?: boolean }>`
 
     text-align: center;
 
-    background: #413543;
-    color: #f1f1f1;
+    background:${props => props.warn ? "#F6F2A9" : "#2C2828"};
+    color:${props => props.warn ? "#121212" : "#f1f1f1"};
 
     padding: 0.5rem 1rem;
 
